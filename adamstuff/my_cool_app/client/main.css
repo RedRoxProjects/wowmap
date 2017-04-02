@@ -1,5 +1,8 @@
 body, html {
-    background-color: white;
+    background-image:url('canvas.png');
+    background-size: 100%;
+	background-position: fixed;
+	margin: 0px;
     font-family: 'Space Mono', monospace;
     padding: 0px;
     margin: 0px;
