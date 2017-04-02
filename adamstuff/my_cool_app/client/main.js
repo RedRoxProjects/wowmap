@@ -54,11 +54,11 @@ Template.body.events({
  
 
     // Get value from form element
-alert("went");
+
     var lname = event.target.myname.value;
-	  alert(lname);
+	  
     var city = event.target.mycity.value;
-alert(city);
+
 var geocoder = new google.maps.Geocoder();
 	  var ll = geocoder.geocode({'address': city}, function(results, status) {
           if (status === 'OK') {
