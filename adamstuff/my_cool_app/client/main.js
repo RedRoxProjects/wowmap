@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 import {Women} from '../imports/api/women.js';
 Meteor.startup(function() {  
-	GoogleMaps.load();
+	GoogleMaps.load({key: "AIzaSyDIB1UZP3aXcXs7XwYndOpJWI6Spe2K-Nk" });
 
 
 });
@@ -43,7 +43,60 @@ Template.map.helpers({
 	}
 });
 
-Template.map.onCreated(function() {  
+Template.body.events({
+
+  'submit .newoman'(event) {
+
+    // Prevent default browser form submit
+
+    event.preventDefault();
+
+ 
+
+    // Get value from form element
+alert("went");
+    var lname = event.target.myname.value;
+	  alert(lname);
+    var city = event.target.mycity.value;
+alert(city);
+var geocoder = new google.maps.Geocoder();
+	  var ll = geocoder.geocode({'address': city}, function(results, status) {
+          if (status === 'OK') {
+		 
+            Women.insert({
+		    name:lname,
+		    lat:results[0].geometry.location.lat(),
+		    lon:results[0].geometry.location.lng()
+
+    });    return true; 
+
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+
+ 
+
+    // Insert a task into the collection
+
+Women.insert({
+		    name:lname,
+		    lat:ll.lat(),
+		    lon:ll.lng()
+
+    });     
+
+
+ 
+
+
+  },
+
+});
+
+
+Template.map.onCreated(function() { 
+
 	GoogleMaps.ready('map', function(map) {
 	var women=Women.find({}).collection._docs._map;
 		
