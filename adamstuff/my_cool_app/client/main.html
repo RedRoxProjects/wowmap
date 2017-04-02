@@ -4,7 +4,7 @@
 
 <body>
   <div class="header">
-    <button class="mbutton">Add me to the map!</button>
+    <!-- <button class="mbutton">Add me to the map!</button> -->
     <h1>Welcome to the World of Women in Tech</h1>
   </div>
 
@@ -12,10 +12,14 @@
   <p>Find awesome women in STEM from all around the globe by exploring our World of WiT (Women in Technology) map.</p>
 </div>
 
+<div class="map">
   {{>map}}
+</div>
 
 <div class="form">
+
   <form class="newoman">
+
       <label for="fname">My Name is</label>
       <input type="text" id="name" name="myname" placeholder="Your name..">
       <label for="city">My City is</label>
@@ -23,7 +27,6 @@
       <label for="country">My Country is</label>
       <input type="text" id="country" name="mycountry" placeholder="Your Country..">
       <input type="submit" value="Add me to the map!">
-   
   </form>
 </div>
 
