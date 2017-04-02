@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WoW Map</title>
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+ <link rel="stylesheet" href="styles.css">
+ <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="header">
+	<button class="mbutton">Add me to the map!</button>
+	<h1>Welcome to the World of Women in Tech</h1>
+</div>
+
+<div>
+	<p>Find awesome women in STEM from all around the globe by exploring our World of WiT (Women in Technology) map.</p>
+</div>
+
+<template name="map">  
+  <div class="map-container">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
+</template> 
+
+<div class="form">
+	<form action="">
+	    <label for="fname">My Name is</label>
+	    <input type="text" id="name" name="myname" placeholder="Your name..">
+	    <label for="city">My City is</label>
+	    <input type="text" id="city" name="mycity" placeholder="Your City..">
+	    <label for="country">My Country is</label>
+	    <input type="text" id="country" name="mycountry" placeholder="Your Country..">
+	    <input type="submit" value="Add me to the map!">
+	 
+	</form>
+</div>
+
+<footer class="footer">
+	<h2>Women inspiring EVERYONE</h2>
+	<p class="sign">Created by <a href="http://github.com/Surfad">Adam</a>, <a href="http://github.com/pzach"> Peter</a> and <a href="http://github.com/dickensa">Amy</a>
+</footer>
+
+
+</body>
+</html>
