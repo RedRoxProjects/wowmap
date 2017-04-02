@@ -520,11 +520,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=2ba78ad2835af73cbf322d02d962dc7bf988040c",
+      "url": "/app/app.js?hash=5666e8f69286f7e25603d8946cc00da057be26b5",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/2ba78ad2835af73cbf322d02d962dc7bf988040c.map",
-      "size": 23348,
-      "hash": "2ba78ad2835af73cbf322d02d962dc7bf988040c"
+      "sourceMapUrl": "/app/5666e8f69286f7e25603d8946cc00da057be26b5.map",
+      "size": 23349,
+      "hash": "5666e8f69286f7e25603d8946cc00da057be26b5"
     },
     {
       "path": "merged-stylesheets.css",
