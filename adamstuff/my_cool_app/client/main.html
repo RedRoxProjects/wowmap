@@ -1,0 +1,24 @@
+<head>
+  <title>my_cool_app</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{>map}}
+  
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="map">  
+  <div class="map-container">
+    {{#unless geolocationError}}
+      {{> googleMap name="map" options=mapOptions}}
+    {{else}}
+      Geolocation failed: {{geolocationError}}
+    {{/unless}}
+  </div>
+</template>  
