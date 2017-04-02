@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.__checkName(\"googleMap\");\nTemplate[\"googleMap\"] = new Template(\"Template.googleMap\", (function() {\n  var view = this;\n  return HTML.Raw('<div class=\"map-canvas\" style=\"width: 100%; height: 100%\"></div>');\n}));\n","bodyAttrs":{}}

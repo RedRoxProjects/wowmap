@@ -4,7 +4,7 @@ import './main.html';
 import {Women} from '../imports/api/women.js';
 Meteor.startup(function() {  
 	GoogleMaps.load({key: "AIzaSyDIB1UZP3aXcXs7XwYndOpJWI6Spe2K-Nk" });
-
+var mappy;
 
 });
 
@@ -68,7 +68,22 @@ var geocoder = new google.maps.Geocoder();
 		    lat:results[0].geometry.location.lat(),
 		    lon:results[0].geometry.location.lng()
 
-    });    return true; 
+    });   markee= new google.maps.Marker({
+				position: new google.maps.LatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng()
+),
+				map: mappy,
+	    animation: google.maps.Animation.DROP,
+
+			});infowindoo=new google.maps.InfoWindow({
+    content: lname});
+
+google.maps.event.addListener(markee, 'click', function() {
+        infowindoo.open(mappy, this);
+
+});
+
+	
+
 
           } else {
             alert('Geocode was not successful for the following reason: ' + status);
@@ -114,6 +129,7 @@ google.maps.event.addListener(marker, 'click', function() {
         this.infowindow.open(map, this);
 
 });
+mappy=map.instance;
 
 
 					;}
