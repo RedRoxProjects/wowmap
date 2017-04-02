@@ -45,26 +45,23 @@ Template.map.helpers({
 
 Template.map.onCreated(function() {  
 	GoogleMaps.ready('map', function(map) {
-		var latLng = Geolocation.latLng();
-		var women=Women.find({}).collection._docs._map;
-		var marker=[];
+	var women=Women.find({}).collection._docs._map;
+		
 				for (var woman in women){
-
-
-			 
-				marker += new google.maps.Marker({
+					var myinfowindow = new google.maps.InfoWindow({
+    content: women[woman].name
+});
+				marker = new google.maps.Marker({
 				position: new google.maps.LatLng(women[woman].lat,women[woman].lon),
-				map: map.instance
-			
-			});
-					var infowindow= new google.maps.InfoWindow({
-          content: women[woman].name
-        });
+				map: map.instance,
+					infowindow:myinfowindow
+			});	
 
-					marker[marker.length-1].addListener('click', function() {
-          infowindow.open(map.instance, marker);
+google.maps.event.addListener(marker, 'click', function() {
+        this.infowindow.open(map, this);
 
-        });
+});
+
 
 					;}
 	});
