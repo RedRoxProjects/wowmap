@@ -1,17 +1,39 @@
 <head>
-  <title>my_cool_app</title>
+  <title>WoW Map</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-  {{>map}}
-  
-</body>
+  <div class="header">
+    <button class="mbutton">Add me to the map!</button>
+    <h1>Welcome to the World of Women in Tech</h1>
+  </div>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
+<div>
+  <p>Find awesome women in STEM from all around the globe by exploring our World of WiT (Women in Technology) map.</p>
+</div>
+
+  {{>map}}
+
+<div class="form">
+  <form action="">
+      <label for="fname">My Name is</label>
+      <input type="text" id="name" name="myname" placeholder="Your name..">
+      <label for="city">My City is</label>
+      <input type="text" id="city" name="mycity" placeholder="Your City..">
+      <label for="country">My Country is</label>
+      <input type="text" id="country" name="mycountry" placeholder="Your Country..">
+      <input type="submit" value="Add me to the map!">
+   
+  </form>
+</div>
+
+<footer class="footer">
+  <h2>Women inspiring EVERYONE</h2>
+    <p class="sign">Created by <a href="http://github.com/Surfad">Adam</a>, <a href="http://github.com/pzach"> Peter</a> and <a href="http://github.com/dickensa">Amy</a>
+    </p>
+</footer>
+
+</body>
 
 <template name="map">  
   <div class="map-container">
@@ -22,3 +44,4 @@
     {{/unless}}
   </div>
 </template>  
+
