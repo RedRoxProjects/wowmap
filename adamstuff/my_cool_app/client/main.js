@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 import {Women} from '../imports/api/women.js';
 Meteor.startup(function() {  
-	GoogleMaps.load({key: "AIzaSyDIB1UZP3aXcXs7XwYndOpJWI6Spe2K-Nk" });
+	GoogleMaps.load({key: "" });
 var mappy;
 
 });
